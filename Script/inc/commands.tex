@@ -1,0 +1,219 @@
+% TeachingMaterials/Layouts/Scripts/inc/commands.tex
+
+%% ============================================================================ %%
+%% Custom commands
+%% ============================================================================ %%
+
+\newcommand{\cb}{\colorbox}
+\newcommand{\tc}{\textcolor}
+\newcommand{\tb}{\textbf}
+\newcommand{\p}{\partial}
+\newcommand{\te}{\text}
+\newcommand{\f}{\frac}
+%% ============================================================================ %%
+
+
+%% ============================================================================ %%
+%% Theorem environment
+%% ============================================================================ %%
+
+\mdfdefinestyle{theoremstyle}{%
+  backgroundcolor=dblue!2,                          % background color
+  linecolor=dblue,                                  % Border color
+  linewidth=2pt,                                    % Border thickness
+  rightline=true,                                   % Right border visible
+  leftline=true,                                    % Left border visible
+  topline=false,                                    % Top border visible
+  bottomline=false,                                 % Bottom border visible
+  innertopmargin=10pt,                              % Margin inside the top
+  innerbottommargin=10pt,                           % Margin inside the bottom
+  innerleftmargin=10pt,                             % Margin inside the left
+  innerrightmargin=10pt,                            % Margin inside the right
+  frametitlerule=true,                              % Title rule visible
+  frametitlerulewidth=0pt,                          % Thickness of title rule
+  frametitlerulecolor=dblue,                        % Color of title rule
+  frametitlebackgroundcolor=dblue!5,                % Background color for the title
+  roundcorner=10pt                                  % Rounded corners
+}
+
+% == Define a theorem counter == %
+\newtheorem{innerthm}{Theorem}[chapter]
+
+% == Define a custom theorem environment == %
+\newenvironment{theorem}[1][]{%
+  \begin{mdframed}[style=theoremstyle,frametitle={\textcolor{dblue}{Theorem~\theinnerthm\ifx\\#1\\\else: #1\fi}}]%
+  \refstepcounter{innerthm}                         % Increment the theorem counter
+  \vspace{-0.5em}                                   % Adjust spacing
+}{%
+  \end{mdframed}%
+}
+%% ============================================================================ %%
+
+
+%% ============================================================================ %%
+%% Definition environment
+%% ============================================================================ %%
+
+\mdfdefinestyle{definitionstyle}{%
+  backgroundcolor=porange!2,                        % background color
+  linecolor=porange!95!black,                                % Border color
+  linewidth=2pt,                                    % Border thickness
+  rightline=true,                                   % Right border visible
+  leftline=true,                                    % Left border visible
+  topline=false,                                    % Top border visible
+  bottomline=false,                                 % Bottom border visible
+  innertopmargin=10pt,                              % Margin inside the top
+  innerbottommargin=10pt,                           % Margin inside the bottom
+  innerleftmargin=10pt,                             % Margin inside the left
+  innerrightmargin=10pt,                            % Margin inside the right
+  frametitlerule=true,                              % Title rule visible
+  frametitlerulewidth=0pt,                          % Thickness of title rule
+  frametitlerulecolor=porange,                      % Color of title rule
+  frametitlebackgroundcolor=porange!5,              % Background color for the title
+  roundcorner=10pt                                  % Rounded corners
+}
+
+% == Define a theorem counter == %
+\newtheorem{innerdef}{Definition}[chapter]
+
+% Define a custom theorem environment
+\newenvironment{definition}[1][]{%
+\refstepcounter{innerdef} % Increment the Definition counter
+\begin{mdframed}[style=definitionstyle,frametitle={\textcolor{porange!95!black}{Definition~\theinnerdef\ifx\\#1\\\else: #1\fi}}]%
+\vspace{-0.5em} % Adjust spacing
+}{%
+\end{mdframed}%
+}
+%% ============================================================================ %%
+
+
+%% ============================================================================ %%
+%% Proof environment
+%% ============================================================================ %%
+
+\mdfdefinestyle{proofstyle}{%
+backgroundcolor=dblue!2,                          % background color
+linecolor=dblue!30!lightgray,                     % Border color
+linewidth=2pt,                                    % Border thickness
+rightline=true,                                   % Right border visible
+leftline=true,                                    % Left border visible
+topline=false,                                    % Top border visible
+bottomline=false,                                 % Bottom border visible
+innertopmargin=10pt,                              % Margin inside the top
+innerbottommargin=10pt,                           % Margin inside the bottom
+innerleftmargin=10pt,                             % Margin inside the left
+innerrightmargin=10pt,                            % Margin inside the right
+frametitlerule=true,                              % Title rule visible
+frametitlerulewidth=0pt,                          % Thickness of title rule
+frametitlerulecolor=dblue!30!lightgray,           % Color of title rule
+frametitlebackgroundcolor=dblue!5,                % Background color for the title
+roundcorner=10pt                                  % Rounded corners
+}
+
+% == Define a theorem counter == %
+\newtheorem{innerproof}{Proof}[chapter]
+
+% Define a custom theorem environment
+\newenvironment{proof}[1][]{%
+  \begin{mdframed}[style=proofstyle,frametitle={\textcolor{dblue!30!lightgray}{Proof of Theorem~\ref{#1}}}]%
+  \vspace{-0.5em} % Adjust spacing
+}{%
+  \end{mdframed}%
+}
+%% ============================================================================ %%
+
+
+%% ============================================================================ %%
+%% Example environment
+%% ============================================================================ %%
+
+\mdfdefinestyle{examplestyle}{%
+backgroundcolor=lightgray!2,                      % background color
+linecolor=lightgray,                              % Border color
+linewidth=2pt,                                    % Border thickness
+rightline=true,                                   % Right border visible
+leftline=true,                                    % Left border visible
+topline=false,                                    % Top border visible
+bottomline=false,                                 % Bottom border visible
+innertopmargin=10pt,                              % Margin inside the top
+innerbottommargin=10pt,                           % Margin inside the bottom
+innerleftmargin=10pt,                             % Margin inside the left
+innerrightmargin=10pt,                            % Margin inside the right
+frametitlerule=true,                              % Title rule visible
+frametitlerulewidth=0pt,                          % Thickness of title rule
+frametitlerulecolor=lightgray,                    % Color of title rule
+frametitlebackgroundcolor=lightgray!5,            % Background color for the title
+roundcorner=10pt                                  % Rounded corners
+}
+
+% == Define a theorem counter == %
+\newtheorem{innerexpl}{Example}[chapter]
+
+% Define a custom theorem environment
+\newenvironment{example}[1][]{%
+\refstepcounter{innerexpl} % Increment the Definition counter
+\begin{mdframed}[style=examplestyle,frametitle={\textcolor{lightgray!95!black}{Example~\theinnerdef\ifx\\#1\\\else: #1\fi}}]%
+\vspace{-0.5em} % Adjust spacing
+}{%
+\end{mdframed}%
+}
+%% ============================================================================ %%
+
+
+%% ============================================================================ %%
+%% Code environment
+%% ============================================================================ %%
+
+\mdfdefinestyle{codestyle}{%
+backgroundcolor=trf!2,                            % background color
+linecolor=trf!70!,                                % Border color
+linewidth=2pt,                                    % Border thickness
+rightline=true,                                   % Right border visible
+leftline=true,                                    % Left border visible
+topline=false,                                    % Top border visible
+bottomline=false,                                 % Bottom border visible
+innertopmargin=10pt,                              % Margin inside the top
+innerbottommargin=10pt,                           % Margin inside the bottom
+innerleftmargin=10pt,                             % Margin inside the left
+innerrightmargin=10pt,                            % Margin inside the right
+frametitlerule=true,                              % Title rule visible
+frametitlerulewidth=0pt,                          % Thickness of title rule
+frametitlerulecolor=trf!70!,                      % Color of title rule
+frametitlebackgroundcolor=trf!5,                  % Background color for the title
+roundcorner=10pt,                                 % Rounded corners
+font=\ttfamily                                    % Set font to monospace
+}
+
+% == Define a theorem counter == %
+\newtheorem{innercode}{Code}[chapter]
+
+% Define a custom theorem environment
+\newenvironment{code}[1][]{%
+\refstepcounter{innercode} % Increment the Definition counter
+\begin{mdframed}[style=codestyle,frametitle={\textcolor{trf!70!}{Code~\theinnercode\ifx\\#1\\\else: #1\fi}}]%
+\vspace{-0.5em} % Adjust spacing
+}{%
+\end{mdframed}%
+}
+%% ============================================================================ %%
+
+
+%% ============================================================================ %%
+%% Custom enumerate environment
+%% ============================================================================ %%
+
+% Customize enumerate with vertical bar
+%\setlist[enumerate,1]{label=\textcolor{lightgray}{\arabic*} \textcolor{lightgray}{|}, labelsep=0.5em, left=0em}
+\setlist[enumerate,1]{%
+  label=\textcolor{lightgray}{\arabic*} \hspace{0em} {\textcolor{lightgray}{\rule[-0.2ex]{1pt}{2ex}}}, % Number + vertical bar as a rule
+  labelsep=0.75em, % Space between label (number + bar) and text
+  left=0em % Remove additional indentation
+}
+
+\setlist[enumerate,2]{%
+  label=\textcolor{lightgray}{\roman*} \hspace{0em} {\textcolor{lightgray}{\rule[-0.2ex]{1pt}{2ex}}}, % Number + vertical bar as a rule
+  labelsep=0.75em, % Space between label (number + bar) and text
+  left=0em % Remove additional indentation
+}
+%% ============================================================================ %%
+

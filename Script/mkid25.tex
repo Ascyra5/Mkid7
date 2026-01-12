@@ -1,0 +1,29 @@
+\documentclass{scrbook}
+\KOMAoptions{twoside=true}
+
+\input{inc/packages}
+\input{inc/settings}
+\input{inc/commands}
+
+\begin{document}
+    \begin{titlepage}
+        \centering
+        
+        % % Logo oben
+        % \includegraphics[width=0.3\textwidth]{figures/logo.pdf}\par
+        % \vspace{2cm}
+        
+        % Titel
+        {\Huge \bfseries Mkid – AG \par}
+        \vspace{1cm}
+        
+        % Name
+        {\Large Manya Willberg \par}
+        \vfill
+        
+        % Datum automatisch
+        {\large \today \par}
+    \end{titlepage}
+
+    \input{data/Introduction.tex}
+\end{document}

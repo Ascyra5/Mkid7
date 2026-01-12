@@ -1,0 +1,25 @@
+{
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "pdflatex",
+        "tools": ["pdflatex"]
+      }
+    ],
+    "latex-workshop.latex.tools": [
+      {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-synctex=1",
+          "-output-directory=out",
+          "%DOC%"
+        ]
+      }
+    ],
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.outDir": "out",
+    "latex-workshop.view.pdf.viewer": "tab",
+"latex-workshop.view.pdf.ref.viewer": "tab"
+  }

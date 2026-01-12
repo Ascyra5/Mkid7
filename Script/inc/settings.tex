@@ -1,0 +1,108 @@
+% TeachingMaterials/Layouts/Scripts/inc/settings.tex
+
+%% =================================================================================================================
+%%  figure layout
+%% =================================================================================================================
+
+% == Reset figure counter per chapter == %
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+
+% == Define a custom caption format == %
+\DeclareCaptionFormat{custom}{\textcolor{\mainc!50!black}{#1#2#3}}                  % Blue captions
+\captionsetup[figure]{format=custom,labelfont=bf,textfont=it}
+
+
+%% =================================================================================================================
+%%  Header and Footer Style
+%% =================================================================================================================
+
+\pagestyle{fancy}                                                                  % use fancy header and footer
+\fancyhf{}                                                                         % clear header and footer
+
+\fancyhead[RO]{\textcolor{gray}{\textbf{\sffamily\nouppercase{\leftmark}}}}        % chapter left (odd pages)
+\fancyhead[LE]{\textcolor{gray}{\textbf{\sffamily\nouppercase{\rightmark}}}}       % section right (even pages)
+
+\fancyfoot[C]{\thepage}                                                            % page number center
+\fancyfoot[RO]{
+    \includegraphics[height=2cm]{figures/logo.pdf}
+} 
+\fancyfoot[LE]{
+    \includegraphics[height=2cm]{figures/logo.pdf}
+} 
+
+\renewcommand{\headrule}{%
+  \color{gray} % Farbe der Linie
+  \tikz[baseline]{\draw[dotted,gray] (0,0) -- (\headwidth,0);}                      % Definiere die Linie
+}
+                                                                                    % line below header
+\renewcommand{\footrulewidth}{0.0pt}                                                % no line above footer
+%% =================================================================================================================
+
+
+%% =================================================================================================================
+%%  Definition Chapter Style
+%% =================================================================================================================
+
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+  \vspace*{2cm}                                         % distance above the chapter title
+  {\parindent \z@                                       % no indentation
+  \raggedleft                                           % right-aligned
+    \normalfont\sffamily\Huge\bfseries                  % style: normal, sans-serif, huge, bold
+    \textcolor{\mainc}{\thechapter}                      % chapter number
+    \enspace                                            % space between chapter number and title
+    \textcolor{gray}{\rule[-0.5ex]{1pt}{1em}}           % vertical line: gray, width=0.4pt, height=1em, depth=0.5ex
+    \enspace                                            % space between vertical line and title
+    \textcolor{\mainc}{#1}                               % chapter title
+    \par\nobreak                                        % no page break after the chapter title
+    \vskip 3cm                                          % distance below the chapter title
+  }}
+\makeatother
+%% =================================================================================================================
+
+
+
+%% =================================================================================================================
+%%  Definition Section Style
+%% =================================================================================================================
+
+\titleformat{\section}
+  [block]                                               % Layout: block style
+  {\normalfont\sffamily\large\bfseries}                 % Style: normal font, sansserif, large size, bold
+  {\hspace*{-0.5cm}\makebox[0pt][r]{\textcolor{\mainc!75!black}{\thesection}}}        % Place the section number on the left margin
+  {0.5cm}                                               % Space between the number and the title
+  {%
+    \textcolor{\mainc!75!black}                          % Shift the section title to align correctly
+  }
+  [\vspace{-0.325cm}\textcolor{lightgray}{\rule{\linewidth}{1pt}}\vspace{0.5cm}] % Line below the section
+%% =================================================================================================================
+
+
+
+%% =================================================================================================================
+%%  Definition Subsection Style
+%% =================================================================================================================
+
+\titleformat{\subsection}
+  [block]                                               % Layout: block style
+  {\normalfont\sffamily\normalsize\bfseries}                 % Style: normal font, sansserif, large size, bold
+  {\hspace*{-0.5cm}\makebox[0pt][r]{\textcolor{\mainc!50!black}{\thesubsection}}}        % Place the section number on the left margin
+  {0.5cm}                                                 % Space between the number and the title
+  {%
+    \textcolor{\mainc!50!black}                                  % Shift the section title to align correctly
+  }
+  [\vspace{-0.325cm}\textcolor{lightgray}{\rule{\linewidth}{0.5pt}}\vspace{0.5cm}] % Line below the section
+  %% =================================================================================================================
+
+
+%% =================================================================================================================
+%% Hyperlink Style
+%% =================================================================================================================
+
+\hypersetup{
+    colorlinks=true,                                       % Enable colored links
+    linkcolor=\mainc!70!black,                             % Color of internal links (e.g., to sections)
+    citecolor=\mainc,                                      % Color of citations
+    urlcolor=\mainc!75!black                               % Color of URLs
+  }
+  %% =================================================================================================================
